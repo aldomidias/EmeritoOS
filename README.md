@@ -16,34 +16,87 @@ Bora voar.
 
 ---
 
-## Ligando o sistema
+## Instalação no VS Code — passo a passo
 
-Dois caminhos. Escolhe o que combina contigo.
+Feito pra quem nunca instalou nada disso. Uns 15 minutos, uma vez só.
 
-### Pelo painel (visual)
+### Passo 1 — Instalar o VS Code
 
-- **macOS:** dois cliques em `Abrir EmeritoOS.command`
-  (na primeira vez: `chmod +x "Abrir EmeritoOS.command"`)
-- **Windows:** dois cliques em `Abrir EmeritoOS.bat`
+Baixa em [code.visualstudio.com](https://code.visualstudio.com), instala
+como qualquer programa (avançar, avançar, concluir).
 
-Sobe o servidor local e abre o painel no navegador: dashboard com foco
-do dia, chat com o Claude, editor de memória e identidade, catálogo de
-skills, biblioteca de conteúdo e editor de slides com renderização de
-PNG embutida.
+### Passo 2 — Instalar o Node.js
 
-Pré-requisitos: [Node.js 18+](https://nodejs.org) e Claude Code
-autenticado (`claude login`).
+Baixa a versão **LTS** em [nodejs.org](https://nodejs.org) e instala do
+mesmo jeito. É o motor que faz o painel funcionar.
 
-### Pelo Claude Code (conversa)
+### Passo 3 — Baixar o EméritoOS
 
-Abre o terminal na pasta do EméritoOS:
+Nesta página do GitHub, clica no botão verde **`<> Code`** →
+**Download ZIP**. Descompacta o arquivo e move a pasta pra um lugar fixo
+(ex: Documentos). Se preferir git: `git clone https://github.com/aldomidias/EmeritoOS.git`
+
+### Passo 4 — Abrir a pasta no VS Code
+
+Abre o VS Code → menu **File (Arquivo)** → **Open Folder (Abrir Pasta)** →
+escolhe a pasta do EméritoOS. Se aparecer a pergunta de confiança, clica
+em **"Yes, I trust the authors"**.
+
+### Passo 5 — Instalar o Claude Code
+
+No VS Code, abre o terminal integrado: menu **Terminal** → **New Terminal**
+(ou atalho `Ctrl + '` no Windows, `Cmd + '` no Mac). Cola e dá Enter:
+
+```
+npm install -g @anthropic-ai/claude-code
+```
+
+### Passo 6 — Entrar na sua conta Claude
+
+No mesmo terminal, digita:
 
 ```
 claude
+```
+
+Na primeira vez ele abre o navegador pra você entrar na sua conta
+(plano Pro ou Max da Anthropic). Faz o login e volta pro VS Code.
+
+### Passo 7 — Ligar o sistema
+
+Ainda dentro do Claude, digita:
+
+```
 /instalar
 ```
 
-O `/instalar` dispara a entrevista de setup. Você só responde.
+O sistema te entrevista sobre o seu negócio (o que faz, como fala, o que
+tá em foco) e monta a memória sozinho. Você só responde. Roda uma vez só.
+
+### Passo 8 — Abrir o painel visual (opcional, recomendado)
+
+Na pasta do EméritoOS (fora do VS Code, no Finder/Explorer):
+
+- **Windows:** dois cliques em `Abrir EmeritoOS.bat`
+- **macOS:** dois cliques em `Abrir EmeritoOS.command`
+  (se o Mac bloquear na primeira vez: abre o terminal do VS Code e roda
+  `chmod +x "Abrir EmeritoOS.command"`, depois tenta de novo)
+
+Abre `http://localhost:7777` no navegador: dashboard com foco do dia,
+chat com o Claude, editor de memória e identidade, catálogo de skills,
+biblioteca de conteúdo e editor de slides.
+
+### Pronto. O dia a dia é assim
+
+Abre o VS Code na pasta → terminal → `claude` → e conversa:
+
+```
+/abrir            ← começa o dia (carrega o contexto do negócio)
+/carrossel ...    ← pede o que precisar
+/salvar           ← guarda tudo no fim
+```
+
+O guia completo de cada skill e aplicação tá no [TUTORIAL.md](TUTORIAL.md).
 
 ---
 
