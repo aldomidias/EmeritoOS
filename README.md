@@ -1,11 +1,15 @@
-# MazyOS
+# EméritoOS
 
-> O sistema operacional do seu negócio dentro do Claude Code.
+> O sistema operacional do seu negócio dentro do Claude Code —
+> com painel web local incluso.
 
-Você acaba de instalar o MazyOS. Em alguns minutos, sua empresa vai
+Você acaba de instalar o EméritoOS. Em alguns minutos, sua empresa vai
 ter uma memória própria, uma identidade visual aplicada em tudo que
-o sistema gerar, e 15 skills prontas pra fazer marketing, SEO, ads
-e operação rodarem com você dirigindo.
+o sistema gerar, 16 skills prontas pra fazer marketing, SEO, ads
+e operação rodarem com você dirigindo — e um painel visual em
+`http://localhost:7777` pra operar tudo pelo navegador.
+
+Guia completo de uso (cada skill e cada aplicação): **[TUTORIAL.md](TUTORIAL.md)**
 
 Bora voar.
 
@@ -15,33 +19,36 @@ Bora voar.
 
 Dois caminhos. Escolhe o que combina contigo.
 
-### Pelo Claude (mais rápido)
+### Pelo painel (visual)
 
-Abre o Claude Code em qualquer pasta e cola:
+- **macOS:** dois cliques em `Abrir EmeritoOS.command`
+  (na primeira vez: `chmod +x "Abrir EmeritoOS.command"`)
+- **Windows:** dois cliques em `Abrir EmeritoOS.bat`
+
+Sobe o servidor local e abre o painel no navegador: dashboard com foco
+do dia, chat com o Claude, editor de memória e identidade, catálogo de
+skills, biblioteca de conteúdo e editor de slides com renderização de
+PNG embutida.
+
+Pré-requisitos: [Node.js 18+](https://nodejs.org) e Claude Code
+autenticado (`claude login`).
+
+### Pelo Claude Code (conversa)
+
+Abre o terminal na pasta do EméritoOS:
 
 ```
-Clona o https://github.com/mazzeoia/MazyOS.git na pasta atual,
-entra nela e roda o /instalar.
+claude
+/instalar
 ```
 
-Ele clona, entra na pasta nova e dispara a entrevista de setup. Você
-só responde.
-
-### Pelo terminal (mais previsível)
-
-```
-git clone https://github.com/mazzeoia/MazyOS.git
-cd MazyOS
-code .
-```
-
-Na janela do VS Code que abrir: terminal integrado → `claude` → `/instalar`.
+O `/instalar` dispara a entrevista de setup. Você só responde.
 
 ---
 
-Quando o `/instalar` terminar, renomeia a pasta `MazyOS/` pro nome do teu
+Quando o `/instalar` terminar, renomeia a pasta `EméritoOS/` pro nome do teu
 negócio (fecha o VS Code, renomeia no Explorer/Finder, abre de novo). A
-pasta não fica como "MazyOS" — ela é o teu negócio agora.
+pasta não fica como "EméritoOS" — ela é o teu negócio agora.
 
 O `/instalar` roda uma vez só. Te entrevista sobre o negócio, monta a
 memória e configura o sistema. Depois disso, é só usar.
@@ -53,9 +60,10 @@ memória e configura o sistema. Depois disso, é só usar.
 **Núcleo** — o jeito de operar o dia a dia
 `/abrir` carrega o contexto antes de cada sessão de trabalho · `/salvar`
 faz commit + push no GitHub · `/atualizar` varre o projeto e atualiza
-a memória · `/novo-projeto` cria pasta isolada pra cada cliente ou
-iniciativa · `/mapear-rotinas` descobre o que você repete e transforma
-em skill personalizada.
+a memória · `/atualizar-sistema` puxa melhorias do motor (servidor, UI,
+skills) sem tocar nos teus dados · `/novo-projeto` cria pasta isolada
+pra cada cliente ou iniciativa · `/mapear-rotinas` descobre o que você
+repete e transforma em skill personalizada.
 
 **Conteúdo e SEO** — vitrine pública da empresa
 `/carrossel` cria carrosséis 1080×1350 com identidade da marca (com ou
@@ -84,14 +92,14 @@ que ela roda.
 A diferença não é velocidade. É capacidade nova — uma pessoa com IA
 constrói o que antes exigia time inteiro. Cada processo crítico que hoje
 roda em open loop (decide → executa → não mede → repete cego) vira
-closed loop dentro do MazyOS (decide → executa → captura → realimenta →
+closed loop dentro do EméritoOS (decide → executa → captura → realimenta →
 ajusta sozinho).
 
 O sistema não substitui você. Vira parte da sua empresa.
 
 ---
 
-## Como o MazyOS pensa
+## Como o EméritoOS pensa
 
 `_memoria/` é o cérebro. Tudo que importa do seu negócio mora aqui —
 quem é a empresa, como ela fala, o que tá em foco essa semana. O Claude
@@ -104,6 +112,38 @@ carrossel, slide, peça que o sistema gera respeita isso.
 versiona no GitHub, fica tudo seu.
 
 ---
+
+## O painel
+
+O EméritoOS inclui um painel web 100% local (`http://localhost:7777`) —
+navegador como interface, Claude Code como motor. Nenhum dado sai da
+máquina além das chamadas que o próprio Claude Code já faz.
+
+- **Hoje** — dashboard com foco do dia e prioridades
+- **Chat** — Claude Code no navegador, com streaming e anexos
+- **Memória / Identidade** — edita o cérebro e o rosto do sistema
+- **Skills** — catálogo com modais de execução
+- **Biblioteca** — conteúdo produzido, com preview de carrosséis
+- **Editor de slides** — edição individual + botão Renderizar (HTML → PNG)
+
+Extensões próprias entram via `local-routes.mjs` / `local-ui.js` /
+`local-ui.css`, sem tocar no motor — sobrevivem ao `/atualizar-sistema`.
+Detalhes no [TUTORIAL.md](TUTORIAL.md) e no `CLAUDE.md`.
+
+---
+
+## Créditos e origem
+
+O EméritoOS é mantido por **Aldo Freitas**, construído sobre dois
+projetos:
+
+- **[MazyOS](https://github.com/mazzeoia/MazyOS)** de Vagner Mazzeo —
+  o sistema original: estrutura de memória, identidade e skills.
+- **[MazyUI](https://github.com/DiogoSabec/MazyUI)** de Diogo Sabec —
+  o painel web local, fork público do MazyOS.
+
+Este repositório é um fork rebatizado desses projetos. Todo o mérito da
+arquitetura é dos autores originais.
 
 ## Quando precisar
 

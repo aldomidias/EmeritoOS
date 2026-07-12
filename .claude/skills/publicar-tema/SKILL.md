@@ -89,6 +89,8 @@ draft: true
 
 **Sem perguntar, partir direto pra criação do carrossel** chamando `.claude/skills/carrossel/SKILL.md` (tipo 1: carrossel texto puro).
 
+**Formato:** default `4:5` (feed retrato). Se o usuário pediu formato específico (ex: "também em stories", "versão pro LinkedIn horizontal"), passar adiante pro `/carrossel` — ele aceita 4:5, 1:1, 9:16 e 16:9 e gera em uma ou mais pastas (`instagram/`, `stories/`, `horizontal/`).
+
 **Pasta:** `marketing/conteudo/<slug-do-blog>-<YYYY-MM-DD>/`
 
 Estrutura de slides do resumo:

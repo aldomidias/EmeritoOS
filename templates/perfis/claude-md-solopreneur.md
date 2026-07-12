@@ -1,4 +1,4 @@
-# [Seu Nome] — MazyOS
+# [Seu Nome] — EméritoOS
 
 > Molde do CLAUDE.md aplicado a **criador solo** — uma pessoa, uma marca,
 > audiência como ativo principal. O sistema gira em torno do que você

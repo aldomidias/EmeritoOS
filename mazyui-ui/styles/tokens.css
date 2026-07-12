@@ -1,0 +1,22 @@
+/* tokens.css — CSS custom properties (design tokens)
+ * Gerado por I2.D — Onda 2. NÃO edite direto: source em mazyui-ui.css
+ */
+
+:root {
+  --paper:        #F5F0E8;
+  --paper-2:      #EFEDE7;
+  --paper-3:      #E8E4DA;
+  --ink:          #1C1C1A;
+  --ink-soft:     #4A4A46;
+  --ink-muted:    #8A8880;
+  --red:          #D0300A;
+  --red-deep:     #A82408;
+  --yellow:       #E8A020;
+  --green:        #3A5C30;
+  --line:         rgba(28,28,26,0.10);
+  --line-strong:  rgba(28,28,26,0.22);
+  --shadow:       0 1px 0 rgba(28,28,26,0.04), 0 0 0 0.5px rgba(28,28,26,0.10);
+  --syne: 'Syne', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', ui-monospace, monospace;
+}

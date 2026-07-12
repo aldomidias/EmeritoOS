@@ -1,4 +1,4 @@
-# [Nome da Agência] — MazyOS
+# [Nome da Agência] — EméritoOS
 
 > Molde do CLAUDE.md aplicado a **agência** — equipe pequena entregando
 > pra múltiplos clientes ao mesmo tempo. O sistema gira em torno de

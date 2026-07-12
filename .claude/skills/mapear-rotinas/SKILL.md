@@ -23,7 +23,7 @@ Fazer 3 perguntas, uma por vez:
 
 ### Passo 2 — Conferir catálogo
 
-Ler `templates/skills/catalogo.md` pra ver se alguma das tarefas mencionadas já é coberta por uma skill nativa do Claude Code ou validada pelo MazyOS. Se sim, sugerir a skill existente em vez de criar uma nova:
+Ler `templates/skills/catalogo.md` pra ver se alguma das tarefas mencionadas já é coberta por uma skill nativa do Claude Code ou validada pelo EméritoOS. Se sim, sugerir a skill existente em vez de criar uma nova:
 
 > "A tarefa X já é resolvida pela skill `/<nome>` que vem nativa. Quer ativar ela em vez de criar uma nova?"
 
@@ -67,9 +67,34 @@ Pra usar: digita / e o nome da skill em qualquer sessão.
 Pra ajustar uma skill depois: edita o SKILL.md correspondente.
 ```
 
+## ⚠️ Regra inviolável quando a skill mexe em UI ou servidor
+
+Se a skill gerada (ou qualquer código que ela gere) precisar:
+
+- adicionar **painel/tela** na UI → escrever em `local-ui.js` via
+  `window.Sabec.registerPanel(def)` — **NUNCA editar `mazyui-ui.html`**
+- adicionar **endpoint HTTP** → escrever em `local-routes.mjs` via
+  `register({ helpers, addRoute })` — **NUNCA editar `mazyui-server.mjs`**
+- ler/gravar arquivos do cliente → usar `helpers.safeResolve(rel)` e
+  caminhos dentro de `dados/`, `_memoria/`, ou pastas custom do cliente
+
+`mazyui-server.mjs` e `mazyui-ui.html` são sobrescritos pelo
+`/atualizar-sistema`. Qualquer feature colada neles **vira lixo no
+próximo update do sistema**. Esse erro já aconteceu e custou código de
+cliente (módulo de Caixa apagado pelo sync — restaurado depois).
+
+A API completa dos hooks `local-*` está na seção "Extensões locais por
+cliente" do `CLAUDE.md` na raiz do cliente.
+
+Antes de gerar uma skill que mexe em UI/server, o `SKILL.md` da skill
+nova deve **explicitar** numa seção "Regras" que ela escreve em
+`local-*`. Assim a regra sobrevive ao próximo Claude que ler aquela
+skill sem o `CLAUDE.md` carregado.
+
 ## Regras
 
 - Não criar skill pra tarefa que aconteceu uma vez só. Tem que ser repetível
 - Não criar mais de 5 skills por sessão de mapeamento (se o usuário pedir mais, dividir em rodadas)
 - Cada skill criada precisa ter um trigger claro (`description` precisa indicar quando invocar) — sem isso a skill nunca é encontrada
 - Se a skill depender de uma ferramenta que o usuário não tem (ex: API do Notion sem MCP configurado), avisar antes de criar e oferecer a versão simplificada
+- Skill que mexe em UI/servidor: aplicar a "Regra inviolável" acima e propagar a regra pro `SKILL.md` da skill gerada

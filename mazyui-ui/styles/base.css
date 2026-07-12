@@ -1,0 +1,15 @@
+/* base.css — Reset, html/body, scrollbars, focus, selection
+ * Gerado por I2.D — Onda 2. NÃO edite direto: source em mazyui-ui.css
+ */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--paper);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}

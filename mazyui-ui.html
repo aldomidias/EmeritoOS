@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{BRAND_TITLE}}</title>
+<link rel="icon" id="favicon" type="image/svg+xml" href="/api/file?path=identidade/logo.svg">
+<link rel="shortcut icon" id="favicon-shortcut" type="image/svg+xml" href="/api/file?path=identidade/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="stylesheet" href="/mazyui-ui/styles/index.css">
+<link rel="stylesheet" href="/local-ui.css" onerror="this.remove()">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="authors">{{BRAND_AUTHORS}}</div>
+      <div class="brand-logo" id="brand-logo"><img id="brand-logo-img" alt=""></div>
+      <div class="mark">{{BRAND_MARK_HTML}}</div>
+      <div class="tag" id="brand-tag">Painel</div>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="sidebar-footer">
+      <div class="folder-pill"><span class="label">Pasta</span><span id="folder-name">—</span></div>
+      <button class="btn-mini" id="btn-restart">Reiniciar servidor</button>
+      <button class="btn-mini danger" id="btn-shutdown">Fechar painel</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <div class="crumb" id="crumb">{{BRAND_NAME}}</div>
+        <h1 id="page-title">Carregando…</h1>
+      </div>
+      <div class="actions" id="topbar-actions"></div>
+    </header>
+    <div class="content" id="content"></div>
+  </main>
+</div>
+
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="kicker" id="modal-kicker">Skill</div>
+      <h3 id="modal-title">—</h3>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+    <div class="modal-foot" id="modal-foot"></div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="guide-backdrop">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="kicker">Guia rápido</div>
+      <h3>Primeiros passos</h3>
+    </div>
+    <div class="modal-body" id="guide-body"></div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" id="guide-close">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close">Fechar</button>
+  <div class="lightbox-content">
+    <div class="lightbox-images" id="lightbox-images"></div>
+    <div class="lightbox-side" id="lightbox-side"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script type="module" src="/mazyui-ui/index.js"></script>
+</body>
+</html>

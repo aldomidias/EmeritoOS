@@ -1,6 +1,6 @@
 ﻿# Identidade — Agência de Performance
 
-> Identidade visual que rodou em cliente real do MazyOS — agência de
+> Identidade visual que rodou em cliente real do EméritoOS — agência de
 > performance, tom direto, sem decoração. Adapta a tua em `identidade/design-guide.md`.
 
 ---

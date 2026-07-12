@@ -1,7 +1,7 @@
 ---
 name: salvar
 description: >
-  Salva o trabalho do MazyOS no GitHub (commit + push). Na primeira vez configura o repositório
+  Salva o trabalho do EméritoOS no GitHub (commit + push). Na primeira vez configura o repositório
   remoto. Use quando o usuário disser "salvar", "salva no github", "commit", "push", "/salvar"
   ou pedir backup do trabalho.
 ---
@@ -21,7 +21,7 @@ Detectar com `git rev-parse --is-inside-work-tree`. Se falhar:
    > 1. Sim, me passa a URL (ex: https://github.com/usuario/nome.git)
    > 2. Não, vou criar agora — me dá um nome pro repositório (ex: meu-mazyos)"
 
-2. **Se opção 1:** rodar `git init`, `git add .`, `git commit -m "Setup inicial do MazyOS"`, `git branch -M main`, `git remote add origin <URL>`, `git push -u origin main`.
+2. **Se opção 1:** rodar `git init`, `git add .`, `git commit -m "Setup inicial do EméritoOS"`, `git branch -M main`, `git remote add origin <URL>`, `git push -u origin main`.
 
 3. **Se opção 2:** verificar se o `gh` CLI está instalado (`gh --version`). 
    - Se sim: rodar `git init`, criar commit inicial, e `gh repo create <nome> --private --source=. --push`.

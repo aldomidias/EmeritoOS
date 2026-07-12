@@ -1,0 +1,7 @@
+# brand.config.js diverge intencionalmente entre instâncias.
+# Sabec/OS (privado), MazyUI (espelho público) e clientes têm brand próprio.
+# Quando merging de outros remotes (ex: sabec → mazyui), mantém o brand local.
+#
+# Requer registro do driver "ours" no clone (one-time):
+#   git config merge.ours.driver true
+brand.config.js merge=ours

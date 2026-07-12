@@ -1,0 +1,179 @@
+/* layout.css — .app, .sidebar, .main, .topbar, .content, modal-backdrop estrutural
+ * Gerado por I2.D — Onda 2. NÃO edite direto: source em mazyui-ui.css
+ */
+
+.app { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+.sidebar {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 28px 0;
+  position: sticky; top: 0;
+  height: 100vh;
+  display: flex; flex-direction: column;
+}
+.brand {
+  padding: 0 24px 28px;
+  border-bottom: 1px solid rgba(245,240,232,0.10);
+  margin-bottom: 16px;
+}
+.brand .mark {
+  font-family: var(--syne);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--paper);
+}
+.brand .mark .slash { color: #D9A07A; }
+.brand .mark .os { color: var(--red); }
+.brand-logo {
+  display: none;
+  margin-bottom: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 52px;
+}
+.brand-logo.show { display: flex; }
+.brand-logo img {
+  max-width: 100%;
+  max-height: 52px;
+  display: block;
+}
+.brand-logo.show ~ .mark {
+  font-size: 18px;
+  opacity: 0.65;
+  margin-top: 6px;
+}
+.brand .tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.55);
+  margin-top: 8px;
+}
+.brand .authors {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: rgba(245,240,232,0.45);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+.nav { flex: 1; padding: 0 12px; display: flex; flex-direction: column; gap: 2px; }
+.nav-sep {
+  height: 1px;
+  background: rgba(245,240,232,0.10);
+  margin: 10px 14px 8px;
+}
+.sidebar-footer {
+  padding: 16px 24px 0;
+  border-top: 1px solid rgba(245,240,232,0.10);
+  margin-top: 16px;
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+.main { min-width: 0; }
+.topbar {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 40px;
+  display: flex; justify-content: space-between; align-items: baseline;
+  position: sticky; top: 0; z-index: 10;
+}
+.topbar h1 {
+  font-family: var(--syne);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-size: 26px;
+  margin: 0;
+  line-height: 1.05;
+}
+.topbar .crumb {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 4px;
+}
+.topbar .actions { display: flex; gap: 8px; align-items: center; }
+
+.content { padding: 32px 40px 80px; max-width: 1180px; }
+
+.empty {
+  max-width: 540px;
+  margin: 80px auto;
+  text-align: center;
+}
+.empty .lead {
+  font-family: var(--syne);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-size: 38px;
+  line-height: 1.05;
+  margin: 0 0 18px;
+}
+.empty .lead .red { color: var(--red); }
+.empty p { color: var(--ink-soft); font-size: 16px; }
+
+/* ---- Modal ---- */
+.modal-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(28,28,26,0.55);
+  display: none;
+  align-items: center; justify-content: center;
+  z-index: 100;
+  padding: 24px;
+}
+.modal-backdrop.open { display: flex; }
+.modal {
+  background: var(--paper);
+  border-radius: 14px;
+  max-width: 720px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 30px 80px rgba(28,28,26,0.35);
+}
+.modal-head {
+  padding: 28px 32px 18px;
+  border-bottom: 1px solid var(--line);
+  flex: 0 0 auto;
+}
+.modal-head .kicker { margin-bottom: 6px; }
+.modal-head h3 {
+  font-family: var(--syne); font-weight: 800; letter-spacing: -0.02em;
+  font-size: 24px; margin: 0;
+}
+.modal-body {
+  padding: 24px 32px;
+  overflow-y: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.modal-foot {
+  padding: 16px 32px 20px;
+  display: flex; gap: 10px; justify-content: flex-end; align-items: center;
+  border-top: 1px solid var(--line);
+  background: var(--paper-2);
+  flex: 0 0 auto;
+}
+.modal-foot .status-pill {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-right: auto;
+  display: flex; align-items: center; gap: 8px;
+}
+
+@media (max-width: 880px) {
+  .app { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; }
+  .today-grid { grid-template-columns: 1fr; }
+  .topbar, .content { padding-left: 20px; padding-right: 20px; }
+}
