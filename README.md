@@ -5,8 +5,9 @@
 
 Você acaba de instalar o EméritoOS. Em alguns minutos, sua empresa vai
 ter uma memória própria, uma identidade visual aplicada em tudo que
-o sistema gerar, 16 skills prontas pra fazer marketing, SEO, ads
-e operação rodarem com você dirigindo — e um painel visual em
+o sistema gerar, 29 skills prontas — 16 de operação (marketing, SEO,
+ads, produção) e 13 do pacote agência (prospecção, diagnóstico, proposta,
+pipeline, entrega e recorrência) — e um painel visual em
 `http://localhost:7777` pra operar tudo pelo navegador.
 
 Guia completo de uso (cada skill e cada aplicação): **[TUTORIAL.md](TUTORIAL.md)**
@@ -81,6 +82,21 @@ e devolve relatório semanal com alertas e recomendações.
 **Produção** — ferramentas do dia a dia
 `/analisar-dados` lê CSV/XLSX/PDF e gera resumo executivo ·
 `/email-profissional` rascunha email a partir de contexto livre.
+
+**Pacote agência** — o funil e a entrega de quem vende posicionamento
+`/diagnostico` varre a presença digital do lead e gera o diagnóstico
+gratuito pronto pra call · `/proposta` gera a proposta personalizada com
+ancoragem · `/pipeline` é o CRM de leads (follow-ups do dia, funil por
+estágio) · `/onboarding-cliente` estrutura cada cliente novo · 
+`/posicionamento` roda a entrevista e entrega a narrativa de autoridade ·
+`/kit-conteudo` gera 60 dias de conteúdo na voz do cliente ·
+`/site-autoridade` monta o site padrão validado com SEO local ·
+`/relatorio-cliente` fecha o mês da carteira de recorrência ·
+`/atendimento-ia` implanta atendimento 24h no WhatsApp do cliente ·
+`/catalogo-carros` cria catálogo + site conectado pra lojas ·
+`/diagnostico-sistemas` mapeia processos de empresas e propõe integrações.
+(As skills `/conteudo` e `/prospeccao`, com scripts e voz reais, existem
+só na instalação local — não são versionadas neste repositório.)
 
 ---
 

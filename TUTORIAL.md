@@ -58,7 +58,9 @@ EmeritoOS/
 ├── saidas/           ← saída: outputs gerais
 ├── scripts/          ← automações
 ├── templates/        ← modelos reutilizáveis (perfis, skills, identidade)
-├── .claude/skills/   ← as 16 skills
+├── .claude/skills/   ← as 29 skills (16 do sistema + 13 do pacote agência)
+├── _privado/         ← dados sensíveis: ofertas, pipeline, leads (fora do git)
+├── clientes/         ← um projeto por cliente da agência (fora do git)
 ├── mazyui-server.mjs ← servidor do painel (não editar na mão)
 ├── mazyui-ui/        ← interface do painel (não editar na mão)
 └── brand.config.js   ← marca do painel (esse pode editar)
@@ -69,7 +71,7 @@ lê ela antes de cada resposta.
 
 ---
 
-## 3. As 16 skills
+## 3. As skills — sistema (16) + pacote agência (13)
 
 ### Núcleo — operação do dia a dia
 
@@ -153,6 +155,79 @@ devolve resumo executivo com insights, tendências e recomendações.
 **`/email-profissional`** — Rascunha email profissional a partir de
 contexto livre, calibrando o tom ao destinatário e ao objetivo.
 *Use quando:* "escreve um email pra...", "como respondo isso?".
+
+---
+
+### 🎯 Pacote agência — Motor comercial
+
+O funil inteiro, da DM fria ao contrato assinado.
+
+**`/conteudo`** *(privada, fora do repositório)* — Conteúdo de Instagram em
+4 formatos (Reels, Stories, carrossel, estático) partindo dos 8 modelos
+visuais aprovados, com mapa de dores por nicho. Estrutura dor → benefício,
+nunca revela o "como". *Use quando:* "conteúdo pro insta", "roteiro de reels".
+
+**`/prospeccao`** *(privada, fora do repositório)* — Social selling ativo:
+jornada do lead em 7 estágios, DMs na voz do dono, banco de objeções e
+scripts de WhatsApp por especialidade. *Use quando:* "me responderam, o que
+digo?", "aborda o dr X".
+
+**`/diagnostico`** — Varre a presença digital de um lead (Google, site,
+Instagram, GMB), cruza com as dores do nicho e gera o diagnóstico gratuito
+pronto pra call + notas privadas com o degrau recomendado da esteira.
+*Use quando:* "diagnóstico do lead X", "prepara a call com Y".
+
+**`/proposta`** — Proposta comercial personalizada por nicho e degrau,
+sempre com os 3 degraus visíveis (entrada, escolhido, âncora) e follow-up
+agendado. *Use quando:* "fechamos a call, gera a proposta".
+
+**`/pipeline`** — CRM de leads: follow-ups do dia, quem esfriou, retrato do
+funil por estágio, registro de cada movimento. Dados em `_privado/` (nunca
+versionados). *Use quando:* "quem eu cobro hoje?", "como tá o funil?".
+
+### 📦 Pacote agência — Entrega
+
+O Método Emérito virando processo, do aceite à entrega final.
+
+**`/onboarding-cliente`** — Fechou? Cria a pasta do cliente com briefing
+pré-preenchido (aproveita diagnóstico e call), checklist dos blocos do
+método por degrau e mensagem de kickoff. *Use quando:* "cliente novo".
+
+**`/posicionamento`** — O bloco 1: entrevista guiada, análise de
+concorrentes locais e narrativa de autoridade (posicionamento em uma frase,
+território, pilares, bio e headline prontas). *Use quando:* "posicionamento
+do dr X".
+
+**`/kit-conteudo`** — O bloco 4: kit de 8 a 12 peças (60 dias de munição)
+na voz do CLIENTE, com calendário de publicação, respeitando o conselho do
+nicho. *Use quando:* "arranque de conteúdo do cliente Y".
+
+**`/site-autoridade`** — O bloco 3: site padrão validado (9 seções), copy
+derivada da narrativa, SEO local com schema por profissão, checklist de
+segurança obrigatório antes de publicar. *Use quando:* "monta o site do dr X".
+
+### 💰 Pacote agência — Novos produtos
+
+As ofertas de recorrência e a expansão de mercado.
+
+**`/relatorio-cliente`** — Relatório mensal de crescimento por cliente
+(GMB, Instagram, site, ads) traduzido pra língua de negócio, com plano do
+mês seguinte. Roda em lote pra carteira inteira. É o que torna a
+recorrência escalável. *Use quando:* "fecha o mês do cliente X".
+
+**`/atendimento-ia`** — O produto de atendimento 24h no WhatsApp: desenha o
+fluxo por especialidade (recepção, triagem, agendamento, lembrete,
+transbordo humano), implanta a stack e gera o material de venda do módulo.
+*Use quando:* "implanta o WhatsApp do dr X".
+
+**`/catalogo-carros`** — Pra lojas de carros: catálogo de veículos com
+estoque em planilha ou painel + site conectado (carro vendido some sozinho),
+SEO automotivo local e manual do lojista. *Use quando:* "site da loja X".
+
+**`/diagnostico-sistemas`** — Pra empresas médias e grandes: entrevista de
+descoberta de processos, mapa de gargalos priorizado por custo e proposta
+técnica de integração (CRM, automações) em fases. *Use quando:* "mapeia os
+processos da empresa X".
 
 ---
 

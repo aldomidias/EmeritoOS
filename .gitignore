@@ -24,3 +24,13 @@ node_modules/
 # Drop zone do usuário (só o README vai versionado)
 dados/*
 !dados/README.md
+
+# ── Playbook comercial da Emérito (NUNCA publicar — repo é público) ──
+# Skills portadas com voz, scripts e objeções reais:
+.claude/skills/conteudo/
+.claude/skills/prospeccao/
+_memoria/conteudo-e-prospeccao.md
+# Dados sensíveis do negócio (preços, esteira, pipeline):
+_privado/
+# Dados de clientes da agência (privados):
+clientes/
