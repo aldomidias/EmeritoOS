@@ -17,6 +17,10 @@ Thumbs.db
 # Dependências
 node_modules/
 
+# Estado local de apps auxiliares (histórico de mensagens, sessões)
+.overclock-app/
+**/.overclock-app/
+
 # Arquivos temporários
 *.log
 *.tmp

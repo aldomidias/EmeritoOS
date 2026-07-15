@@ -5,10 +5,11 @@
 
 Você acaba de instalar o EméritoOS. Em alguns minutos, sua empresa vai
 ter uma memória própria, uma identidade visual aplicada em tudo que
-o sistema gerar, 29 skills prontas — 16 de operação (marketing, SEO,
-ads, produção) e 13 do pacote agência (prospecção, diagnóstico, proposta,
-pipeline, entrega e recorrência) — e um painel visual em
-`http://localhost:7777` pra operar tudo pelo navegador.
+o sistema gerar, 44 skills prontas — 16 de operação (marketing, SEO,
+ads, produção), 13 do pacote agência (prospecção, diagnóstico, proposta,
+pipeline, entrega e recorrência) e 15 técnicas (segurança, UI/UX,
+documentos) — e um painel visual em `http://localhost:7777` pra operar
+tudo pelo navegador.
 
 Guia completo de uso (cada skill e cada aplicação): **[TUTORIAL.md](TUTORIAL.md)**
 
@@ -150,6 +151,17 @@ estágio) · `/onboarding-cliente` estrutura cada cliente novo ·
 `/diagnostico-sistemas` mapeia processos de empresas e propõe integrações.
 (As skills `/conteudo` e `/prospeccao`, com scripts e voz reais, existem
 só na instalação local — não são versionadas neste repositório.)
+
+**Pacote técnico** — o que garante qualidade e segurança na entrega
+`seguranca-web` e `owasp-security` auditam qualquer site, API ou painel
+antes de publicar · `ui-ux-pro-max`, `frontend-design`, `theme-factory` e
+`web-design-guidelines` cuidam de estilo, paleta, tipografia e
+acessibilidade · `react-best-practices` e `webapp-testing` constroem e
+verificam o que foi feito · `canvas-design` e `banner-design` geram
+carrosséis e banners · `pdf`, `docx`, `xlsx` e `pptx` entregam propostas,
+relatórios, planilhas e apresentações · `skill-creator` cria skills novas.
+Origem, commit e licença de cada uma em
+[`.claude/skills/SKILLS-TECNICAS.md`](.claude/skills/SKILLS-TECNICAS.md).
 
 ---
 

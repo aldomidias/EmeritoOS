@@ -145,6 +145,33 @@ Quando o usuário pedir skill nova:
 
 ---
 
+## Skills técnicas padrão do sistema
+
+O EméritoOS traz um pacote de skills técnicas de segurança, UI/UX e
+criação de interfaces em `.claude/skills/` (origem e licenças documentadas
+em `.claude/skills/SKILLS-TECNICAS.md`):
+
+- **Segurança:** `seguranca-web` (checklist obrigatório Emérito) e
+  `owasp-security` (OWASP Top 10:2025, ASVS 5.0, LLM/Agentic AI security).
+  Consultar SEMPRE antes de publicar site, API ou painel.
+- **Design de UI:** `ui-ux-pro-max` (paletas, fontes, estilos por nicho),
+  `frontend-design` (direção de arte), `theme-factory` (temas prontos),
+  `web-design-guidelines` (auditoria de acessibilidade e UX).
+- **Construção e verificação:** `react-best-practices` (performance
+  React/Next), `webapp-testing` (testa sites locais com Playwright).
+- **Assets visuais:** `canvas-design` (arte PNG/PDF, carrosséis) e
+  `banner-design` (banners de social, ads e heroes).
+- **Documentos:** `pdf`, `docx`, `xlsx`, `pptx` — propostas, relatórios,
+  planilhas e apresentações profissionais direto do Claude.
+- **Meta:** `skill-creator` — usar no fluxo de "Criação de skills" acima.
+
+Fluxo padrão pra qualquer entrega visual/web: projetar com
+`ui-ux-pro-max` + `frontend-design` → construir → auditar com
+`web-design-guidelines` + `seguranca-web`/`owasp-security` → verificar
+com `webapp-testing`.
+
+---
+
 ## Atualização do sistema (clientes)
 
 Cada cliente do EméritoOS é um clone com brand, dados e memória próprios.
